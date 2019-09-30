@@ -7,12 +7,16 @@
     x:Class="ShellLoginSample.Views.LoginPage">
     <ContentPage.Content>
         <StackLayout Margin="50,15" VerticalOptions="Center">
-            <Entry Placeholder="Username"/>
+            <!-- 1. clear button -->
+            <Entry Placeholder="Username"/> 
             <Entry Placeholder="Password" IsPassword="True"/>
             <Button Text="Login"
                     Clicked="OnClicked"
                     BackgroundColor="Blue"
                     TextColor="White"/>
+
+            <!-- 2. remember me -->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

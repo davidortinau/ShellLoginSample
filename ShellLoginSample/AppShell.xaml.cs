@@ -12,4 +12,9 @@ namespace ShellLoginSample
             InitializeComponent();
         }
     }
+
+    public class HiddenItem : ShellItem
+    {
+
+    }
 }

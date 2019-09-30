@@ -10,6 +10,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <!--<ToolbarItem Text="Go To Hidden" Command="{Binding GoToHiddenCommand}" />-->
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -51,6 +52,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Go To Hidden"
+                BackgroundColor="Black"
+                TextColor="White"
+                CornerRadius="0"
+                Command="{Binding GoToHiddenCommand}"/>
     </StackLayout>
 
 </ContentPage>

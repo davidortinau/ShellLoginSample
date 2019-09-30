@@ -14,10 +14,5 @@ namespace ShellLoginSample.Views
         {
             InitializeComponent();
         }
-
-        public async void OnLogout(object source, EventArgs args)
-        {
-            await Shell.Current.GoToAsync("//login");
-        }
     }
 }

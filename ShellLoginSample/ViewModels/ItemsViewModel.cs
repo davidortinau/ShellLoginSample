@@ -14,12 +14,17 @@ namespace ShellLoginSample.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public Command GoToHiddenCommand { get; set; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            GoToHiddenCommand = new Command(() =>
+            {
+                Shell.Current.GoToAsync("//hidden");
+            });
 
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
