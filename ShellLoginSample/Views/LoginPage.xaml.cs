@@ -16,5 +16,10 @@ namespace ShellLoginSample.Views
         {
             await Shell.Current.GoToAsync("//main");
         }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//login/registration");
+        }
     }
 }

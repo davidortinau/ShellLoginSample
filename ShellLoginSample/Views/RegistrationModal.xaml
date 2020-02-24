@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.PresentationMode="ModalAnimated"
+             x:Class="ShellLoginSample.Views.RegistrationModal">
+    <ContentPage.Content>
+        <StackLayout Spacing="12" Margin="50,15">
+            <Entry Placeholder="Username" />
+            <Entry Placeholder="Email" />
+            <Entry Placeholder="Password" />
+            <Entry Placeholder="Confirm password" />
+
+            <Button Text="Register"
+                    BackgroundColor="Blue"
+                    Clicked="Button_Clicked"
+                    TextColor="White"/>
+
+            <!-- 2. Register -->
+            <Label Text="Cancel"
+                   x:Name="CancelBtn"
+                   TextColor="#333333"
+                   Margin="20"
+                   HorizontalTextAlignment="Center"
+                   TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

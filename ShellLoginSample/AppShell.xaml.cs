@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShellLoginSample.Views;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -10,6 +11,8 @@ namespace ShellLoginSample
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("registration", typeof(RegistrationModal));
         }
     }
 
