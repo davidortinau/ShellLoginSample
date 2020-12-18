@@ -3,6 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:vm="clr-namespace:ShellLoginSample.ViewModels"
        mc:Ignorable="d"
        FlyoutBehavior="Disabled"
        xmlns:local="clr-namespace:ShellLoginSample.Views"
@@ -10,46 +11,29 @@
        Title="ShellLoginSample"
        x:Class="ShellLoginSample.AppShell">
 
-    <!-- 
-        Styles and Resources 
-    -->
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
-            <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
-            </Style>
-            <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
-        </ResourceDictionary>
-    </Shell.Resources>
+    <Shell.BindingContext>
+        <vm:AppViewModel/>
+    </Shell.BindingContext>
 
     <ShellItem Route="login">
-        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>
-
+    
     <TabBar Route="main">
         <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+            <ShellContent 
+                ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
         <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+            <ShellContent 
+                ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+        <Tab Title="Admin" IsVisible="{Binding IsAdmin}">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:AdminPage}"/>
         </Tab>
     </TabBar>
 
-    <!-- 3. Add Hidden Top Tab Group -->
-    <app:HiddenItem>
-        <Tab Route="hidden">
-            <ShellContent Title="One" ContentTemplate="{DataTemplate local:AboutPage}" />
-            <ShellContent Title="Two" ContentTemplate="{DataTemplate local:AboutPage}" />
-        </Tab>
-    </app:HiddenItem>
+    
 
 </Shell>

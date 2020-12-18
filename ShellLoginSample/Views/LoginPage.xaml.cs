@@ -12,8 +12,12 @@ namespace ShellLoginSample.Views
             InitializeComponent();
         }
 
-        protected async void OnClicked(object source, EventArgs args)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
+            MessagingCenter.Send<LoginPage>(this, 
+                (UsernameTxt.Text == "admin") ? "admin" : "user"    
+            );
+
             await Shell.Current.GoToAsync("//main");
         }
 

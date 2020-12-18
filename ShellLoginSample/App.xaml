@@ -6,6 +6,19 @@
              mc:Ignorable="d"
              x:Class="ShellLoginSample.App">
     <Application.Resources>
-        
+        <Color x:Key="NavigationPrimary">#2196F3</Color>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor" Value="White" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+            <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+            <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+        </Style>
+        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+
     </Application.Resources>
 </Application>

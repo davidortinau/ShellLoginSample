@@ -10,11 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.282-pre4" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.0-pre1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1791-pre5" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0-rc1" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AdminPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\RegistrationModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

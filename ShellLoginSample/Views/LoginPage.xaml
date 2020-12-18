@@ -24,10 +24,13 @@
         
         <StackLayout Margin="50,15" VerticalOptions="Center" Spacing="12">
             <!-- 1. clear button -->
-            <Entry Placeholder="Username" PlaceholderColor="#f1f1f1"/>
+            <Entry 
+                x:Name="UsernameTxt"
+                Placeholder="Username" PlaceholderColor="#f1f1f1"/>
             <Entry Placeholder="Password" IsPassword="True" PlaceholderColor="#f1f1f1"/>
+            
             <Button Text="Login"
-                    Clicked="OnClicked"
+                    Clicked="Button_Clicked"
                     BackgroundColor="Blue"
                     TextColor="White"/>
 
@@ -39,8 +42,7 @@
                    HorizontalTextAlignment="Center"
                    TextDecorations="Underline">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

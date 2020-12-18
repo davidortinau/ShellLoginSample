@@ -52,11 +52,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Go To Hidden"
+        <!--<Button Text="Go To Hidden"
                 BackgroundColor="Black"
                 TextColor="White"
                 CornerRadius="0"
-                Command="{Binding GoToHiddenCommand}"/>
+                Command="{Binding GoToHiddenCommand}"/>-->
     </StackLayout>
 
 </ContentPage>
