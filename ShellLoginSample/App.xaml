@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:common="clr-namespace:Common"
              mc:Ignorable="d"
              x:Class="ShellLoginSample.App">
     <Application.Resources>
@@ -19,6 +20,32 @@
             <Setter Property="Shell.TabBarTitleColor" Value="White"/>
         </Style>
         <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+
+        <FontImageSource
+            x:Key="IconBack"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.Backward}"
+            Size="18"
+            Color="White"/>
+        <FontImageSource
+            x:Key="IconSignout"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.SignOutAlt}"
+            Size="18"
+            Color="White"/>
+        <FontImageSource
+            x:Key="IconInfo"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.Info}"
+            Size="18"
+            Color="White"/>
+        <FontImageSource
+            x:Key="IconHome"
+            FontFamily="FontAwesome"
+            Glyph="{x:Static common:IconFont.Home}"
+            Size="18"
+            Color="White"/>
+
 
     </Application.Resources>
 </Application>

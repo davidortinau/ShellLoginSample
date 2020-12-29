@@ -4,12 +4,15 @@
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:vm="clr-namespace:ShellLoginSample.ViewModels"
+       xmlns:common="clr-namespace:Common"
        mc:Ignorable="d"
        FlyoutBehavior="Disabled"
        xmlns:local="clr-namespace:ShellLoginSample.Views"
        xmlns:app="clr-namespace:ShellLoginSample"
        Title="ShellLoginSample"
-       x:Class="ShellLoginSample.AppShell">
+       x:Class="ShellLoginSample.AppShell"
+       Navigating="Shell_Navigating"
+       >
 
     <Shell.BindingContext>
         <vm:AppViewModel/>
@@ -20,17 +23,21 @@
     </ShellItem>
     
     <TabBar Route="main">
-        <Tab Title="Browse" Icon="tab_feed.png">
+        <Tab Title="Back" Route="back" Icon="{StaticResource IconBack}">
+            <ShellContent 
+                ContentTemplate="{DataTemplate local:EmptyRoutePage}" />
+        </Tab>
+        <Tab Title="Home" Route="home" Icon="{StaticResource IconHome}">
             <ShellContent 
                 ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
+        <Tab Title="Info" Route="info" Icon="{StaticResource IconInfo}">
             <ShellContent 
                 ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
-        <Tab Title="Admin" IsVisible="{Binding IsAdmin}">
+        <Tab Title="Logout" Route="logout" Icon="{StaticResource IconSignout}">
             <ShellContent
-                ContentTemplate="{DataTemplate local:AdminPage}"/>
+                ContentTemplate="{DataTemplate local:EmptyRoutePage}"/>
         </Tab>
     </TabBar>
 

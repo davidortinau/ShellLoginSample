@@ -18,7 +18,7 @@ namespace ShellLoginSample.Views
                 (UsernameTxt.Text == "admin") ? "admin" : "user"    
             );
 
-            await Shell.Current.GoToAsync("//main");
+            await Shell.Current.GoToAsync("//home");
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
